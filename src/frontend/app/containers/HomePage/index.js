@@ -28,16 +28,70 @@ export default function HomePage() {
       <Grid container item xs={12} spacing={1}>
           <Grid item xs={4}>
             <Avatar alt="Remy Sharp" src="https://material-ui.com/static/images/avatar/1.jpg" />
-            <div>Good morning</div>text
+            <div>Good Morning, Reinu</div>
           </Grid>
           <Grid item xs={8}>
-            <Grid container item spacing={1}>
+            <Grid container item xs={12} spacing={1}>
               <Grid item xs={8}>
-                <div>Few nudges for you</div>
+                {/* <Grid container item xs={8} spacing={1}> */}
+                  <div>Few nudges for you</div>
               </Grid>
+                {/* </Grid> */}
               <Grid item xs={4}>
                 <div>Mark all done</div>
               </Grid>
+
+              <Grid item xs={8}>
+                {/* <Grid container item xs={8} spacing={1}> */}
+                <div>LCC Cost is increasing for the last 3 periods in Mexico</div>
+              </Grid>
+                {/* </Grid> */}
+              <Grid item xs={4}>
+                <div>Dismiss</div>
+              </Grid>
+
+              <Grid item xs={8}>
+                {/* <Grid container item xs={8} spacing={1}> */}
+                <div>Service level for Pouch is on a downward trend fro the last 3 periods in France.</div>
+              </Grid>
+                {/* </Grid> */}
+              <Grid item xs={4}>
+                <div>Dismiss</div>
+              </Grid>
+
+              <Grid item xs={8}>
+                {/* <Grid container item xs={8} spacing={1}> */}
+                <div>Inventory in Days is on a upward trend for Cans for last 3 periods in Germany.</div>
+              </Grid>
+                {/* </Grid> */}
+              <Grid item xs={4}>
+                <div>Dismiss</div>
+              </Grid>
+
+              <Grid item xs={8}>
+                {/* <Grid container item xs={8} spacing={1}> */}
+                <div>Show all</div>
+              </Grid>
+                {/* </Grid> */}
+              <Grid item xs={4}>
+                <div></div>
+              </Grid>
+              
+              {/* <Grid container item xs={12} spacing={1}>
+                <Grid container item xs={12} spacing={1}>
+                  <div>LCC Cost is increasing for the last 3 periods in Mexico</div>
+                </Grid>
+                <Grid container item xs={12} spacing={1}>
+                  <div>Service level for Pouch is on a downward trend fro the last 3 periods in France.</div>
+                </Grid>
+                <Grid container item xs={12} spacing={1}>
+                  <div>Inventory in Days is on a upward trend for Cans for last 3 periods in Germany.</div>
+                </Grid>
+                <Grid container item xs={12} spacing={1}>
+                  <div>Show all</div>
+                </Grid>
+              </Grid> */}
+            
             </Grid>
           </Grid>
         </Grid>
