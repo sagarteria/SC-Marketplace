@@ -36,7 +36,7 @@ function MaterialUiCard() {
   return (
     <Card className={classes.root}>
       <CardContent>
-      <Typography className={classes.title} variant="h3" component="h3">
+      <Typography className={classes.title} variant="h4" component="h3">
           Service level (CP)
         </Typography>
         <br />
