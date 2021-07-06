@@ -77,11 +77,17 @@ export function BoardsPage() {
     setValue(newValue);
   };
   useEffect(() => { 
-    fetch("https://api.example.com/items")
+    fetch("https://sca-dev-metabase.azurewebsites.net/api/session", 
+    {
+      mode: 'cors', 
+      headers: {'Access-Control-Allow-Origin':'*'}, 
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username: 'admin@xyz.com', password: 'mars@123' })})
       .then(res => res.json())
       .then(
         (result) => {
-          console.log('data')
+          console.log('data', result)
         }
       )
       },
