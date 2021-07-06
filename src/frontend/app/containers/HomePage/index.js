@@ -17,6 +17,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import ShareIcon from '@material-ui/icons/Share';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import TextField from '@material-ui/core/TextField';
 import MaterialUiCard from '../../components/MaterialUiCard';
 
 const StyledTabs = withStyles({
@@ -58,6 +59,10 @@ const useStyles = makeStyles((theme) => ({
   demo2: {
     backgroundColor: '#2e1534',
   },
+  textFields: {
+    // marginLeft: '-330px',
+    // marginTop: '30px',
+  }
 }));
 
 export default function HomePage() {
@@ -73,10 +78,10 @@ export default function HomePage() {
         <Grid item xs={4}>
           <div></div>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <div></div>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <StyledTabs value={value} onChange={handleChange} aria-label="styled tabs example">
             <StyledTab label="My Feed" />
             <StyledTab label="Boards" />
@@ -86,6 +91,9 @@ export default function HomePage() {
 
       {/* middle section - greetings, nudges */}
       <Grid container item xs={12} spacing={1} alignItems="center">
+      <Grid item xs={12}>
+      <TextField id="outlined-basic" label="Search" variant="outlined" className={classes.textFields} />
+      </Grid>
         <Grid item xs={4}>
           <Grid container item xs={12} spacing={1}>
             <Grid item xs={4} />
