@@ -24,7 +24,6 @@ import { useInjectReducer } from 'utils/injectReducer';
 import makeSelectBoardsPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
-import {mebaseTokenFetch} from './actions';
 
 const StyledTabs = withStyles({
   indicator: {
@@ -149,7 +148,6 @@ const mapStateToProps = createStructuredSelector({
 function mapDispatchToProps(dispatch) {
   return {
     dispatch,
-    mebaseTokenFetch: () => dispatch(mebaseTokenFetch())
   };
 }
 
