@@ -10,7 +10,7 @@ import {METABASE_TOKEN_FETCH} from "./constants";
 
 export default function* metabaseTokenSaga() {
     // See example in containers/HomePage/saga.js
-    yield takeLatest(METABASE_TOKEN_FETCH );
+   // yield takeLatest(METABASE_TOKEN_FETCH );
 }
 
 
