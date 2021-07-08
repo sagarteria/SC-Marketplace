@@ -18,6 +18,7 @@ import Tab from '@material-ui/core/Tab';
 import { PowerBIEmbed } from 'powerbi-client-react';
 import { models } from 'powerbi-client';
 import TextField from '@material-ui/core/TextField';
+import axios from 'axios';
 
 import { useInjectSaga } from 'utils/injectSaga';
 import { useInjectReducer } from 'utils/injectReducer';
@@ -76,25 +77,42 @@ export function BoardsPage() {
     setValue(newValue);
   };
   useEffect(() => { 
-    fetch("https://sca-dev-metabase.azurewebsites.net/api/session", 
-    {
-      mode: 'cors', 
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Origin':'*' 
-      },
-      body: JSON.stringify({ username: 'admin@xyz.com', password: 'mars@123' })})
-      .then(res => res.json())
-      .then(
-        (result) => {
-          console.log('data', result)
-        }
-      )
-      .catch((err) => {
-        console.log('The error occurred while get Metabase JSON response : ', err);
-        })
+    // fetch("https://sca-dev-metabase.azurewebsites.net/api/session", 
+    // {
+    //   mode: 'cors', 
+    //   method: 'POST',
+    //   headers: { 
+    //     'Content-Type': 'application/json',
+    //     'Access-Control-Allow-Credentials': true,
+    //     'Access-Control-Allow-Origin':'*' 
+    //   },
+    //   body: JSON.stringify({ username: 'admin@xyz.com', password: 'mars@123' })})
+    //   .then(res => res.json())
+    //   .then(
+    //     (result) => {
+    //       console.log('data', result)
+    //     }
+    //   )
+    //   .catch((err) => {
+    //     console.log('The error occurred while get Metabase JSON response : ', err);
+    //     })
+
+        var config = {
+          'Content-Type': 'application/json',
+          'X-Metabase-Session': '6c146e56-58d9-4eec-9f5e-0d78d9ab6028',     
+          'Access-Control-Allow-Credentials': true,
+          'Access-Control-Allow-Origin':'*' 
+      };
+      var axiosOptions = {
+          method: 'POST',
+          url: 'https://sca-dev-metabase.azurewebsites.net/api/getdatabase',
+          headers: config
+      };
+      axios(axiosOptions).then(response => {
+          console.log(response.data);
+      }).catch(err => {
+          console.log(err);
+      });
       },
     );
 
@@ -144,7 +162,7 @@ export function BoardsPage() {
             }}
           /> */}
           <h3>Dashboard integrated from Metabase</h3>
-          <iframe src='https://sca-dev-metabase.azurewebsites.net/public/dashboard/2a36101c-d6ad-4839-9937-e1316f82c02c' frameborder='0' width='1000' height='600' allowtransparency></iframe>
+          <iframe src='https://sca-dev-metabase.azurewebsites.net/public/dashboard/2a36101c-d6ad-4839-9937-e1316f82c02c' frameborder='0' width='1000' height='800' allowtransparency></iframe>
         </Grid>
       </Grid>
     </Grid>
