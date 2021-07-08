@@ -79,9 +79,12 @@ export function BoardsPage() {
     fetch("https://sca-dev-metabase.azurewebsites.net/api/session", 
     {
       mode: 'cors', 
-      headers: {'Access-Control-Allow-Origin':'*'}, 
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
+        'Access-Control-Allow-Origin':'*' 
+      },
       body: JSON.stringify({ username: 'admin@xyz.com', password: 'mars@123' })})
       .then(res => res.json())
       .then(
@@ -89,6 +92,9 @@ export function BoardsPage() {
           console.log('data', result)
         }
       )
+      .catch((err) => {
+        console.log('The error occurred while get Metabase JSON response : ', err);
+        })
       },
     );
 
@@ -123,6 +129,10 @@ export function BoardsPage() {
         <Grid item xs={12}>
         <TextField id="outlined-basic" label="Search" variant="outlined" className={classes.textFields} />
         </Grid>
+        {/* Power BI report integrated */}
+        {/* <Grid item xs={12}>
+          <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=c008608d-ac4c-43aa-88b1-b5d565388ce2&autoAuth=true&ctid=2fc13e34-f03f-498b-982a-7cb446e25bc6&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </Grid> */}
         <Grid item xs={12}>
           {/* <PowerBIEmbed
             embedConfig={{
@@ -133,7 +143,8 @@ export function BoardsPage() {
               tokenType: models.TokenType.Embed,
             }}
           /> */}
-          <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=c008608d-ac4c-43aa-88b1-b5d565388ce2&autoAuth=true&ctid=2fc13e34-f03f-498b-982a-7cb446e25bc6&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameborder="0" allowFullScreen="true"></iframe>
+          <h3>Dashboard integrated from Metabase</h3>
+          <iframe src='https://sca-dev-metabase.azurewebsites.net/public/dashboard/2a36101c-d6ad-4839-9937-e1316f82c02c' frameborder='0' width='1000' height='600' allowtransparency></iframe>
         </Grid>
       </Grid>
     </Grid>
