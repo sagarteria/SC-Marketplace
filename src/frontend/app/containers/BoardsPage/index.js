@@ -122,6 +122,8 @@ export function BoardsPage() {
       <Grid container item xs={12} spacing={1}>
         <Grid item xs={12}>
         <TextField id="outlined-basic" label="Search" variant="outlined" className={classes.textFields} />
+        </Grid>
+        <Grid item xs={12}>
           {/* <PowerBIEmbed
             embedConfig={{
               type: 'report', // Supported types: report, dashboard, tile, visual and qna
@@ -131,6 +133,7 @@ export function BoardsPage() {
               tokenType: models.TokenType.Embed,
             }}
           /> */}
+          <iframe width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=c008608d-ac4c-43aa-88b1-b5d565388ce2&autoAuth=true&ctid=2fc13e34-f03f-498b-982a-7cb446e25bc6&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLXVzLWVhc3QyLXJlZGlyZWN0LmFuYWx5c2lzLndpbmRvd3MubmV0LyJ9" frameborder="0" allowFullScreen="true"></iframe>
         </Grid>
       </Grid>
     </Grid>
